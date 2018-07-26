@@ -1,9 +1,9 @@
 # PHP Dotenv manager
 
-[![Build Status](https://travis-ci.org/markwalet/environment-manager.svg?branch=master)](https://travis-ci.org/markwalet/environment-manager)
-[![Total Downloads](https://poser.pugx.org/markwalet/environment-manager/downloads)](https://packagist.org/packages/markwalet/environment-manager)
-[![Latest Stable Version](https://poser.pugx.org/markwalet/environment-manager/v/stable)](https://packagist.org/packages/markwalet/environment-manager)
-[![License](https://poser.pugx.org/markwalet/environment-manager/license)](https://packagist.org/packages/markwalet/environment-manager)
+[![Build Status](https://travis-ci.org/markwalet/dotenv-manager.svg?branch=master)](https://travis-ci.org/markwalet/dotenv-manager)
+[![Total Downloads](https://poser.pugx.org/markwalet/dotenv-manager/downloads)](https://packagist.org/packages/markwalet/dotenv-manager)
+[![Latest Stable Version](https://poser.pugx.org/markwalet/dotenv-manager/v/stable)](https://packagist.org/packages/markwalet/dotenv-manager)
+[![License](https://poser.pugx.org/markwalet/dotenv-manager/license)](https://packagist.org/packages/markwalet/dotenv-manager)
 
 A PHP package that helps you edit the .env file programmatically.
 
@@ -11,7 +11,7 @@ A PHP package that helps you edit the .env file programmatically.
 You can install this package with composer.
 
 ```shell
-composer require markwalet/environment-manager
+composer require markwalet/dotenv-manager
 ```
 
 This package can be used in every PHP project.
@@ -36,28 +36,28 @@ $app->register(\MarkWalet\DotenvManager\DotenvManagerServiceProvider::class);
 You can get the dotenv manager by resolving it with the app Laravel service container. 
 This will give you a singleton `MarkWalet\DotenvManager\DotenvManager` instance with the right dependencies.
 ```php
-$environment = app(DotenvManager::class);
+$dotenv = app(DotenvManager::class);
 ```
 
 You can also manually set up an `DotenvManager` class when you are not using Laravel.
 
-Once you have a dotenv instance you can add lines to the environment:
+Once you have a dotenv instance you can add a new value to the dotenv file:
 
 ```php
-$environment->add("FOO", "Bar")->after("OTHER_KEY");
+$dotenv->add("FOO", "Bar");
 ```
 
 If you don't specify a location for the new value, the value will be added at the end of the file.
 
-You can also update environment variables:
+You can also edit dotenv variables:
 
 ```php
-$environment->update("EXISTING_KEY", "updatedValue");
+$dotenv->update("EXISTING_KEY", "updatedValue");
 ```
 
 This will replace the original value of `EXISTING_KEY` with `updatedValue`.
 
-All values will be automatically formatted to a valid environment value.
+All values will be automatically formatted to a valid dotenv value.
 
 ### Mutating multiple lines
 You can use the `mutate()` method when you want to apply multiple changes to the file. The syntax looks a lot like the syntax in Laravel migrations:
@@ -71,7 +71,7 @@ You can use the `mutate()` method when you want to apply multiple changes to the
  * TEST3=value3
  */
  
-$environment->mutate(function(DotenvBuilder $builder){
+$dotenv->mutate(function(DotenvBuilder $builder){
     $builder->add('TEST4', 'escaped value');
     $builder->update('TEST2', 'updated')->after('TEST3');
     $builder->delete('TEST1');
@@ -87,7 +87,7 @@ $environment->mutate(function(DotenvBuilder $builder){
 ```
 
 ### Available methods
-Below you will find every available method and its underlying class. These methods can be called on the `DotenvManager` class itself and the `DotenvBuilder` you get when mutating the environment.
+Below you will find every available method and its underlying class. These methods can be called on the `DotenvManager` class itself and also on the `DotenvBuilder` you get when mutating the dotenv file.
 
 Method  |  Returns
 ------------- | -------------
@@ -133,10 +133,10 @@ class Increment extends Change
     }
 }
 
-$environment->extend('increment', Increment::class);
+$dotenv->extend('increment', Increment::class);
 ```
 
-After we extended the builder we can call it through the environment object:
+After we extended the builder we can call it through the `DotenvManager` instance:
 
 ```php
 /**
@@ -145,7 +145,7 @@ After we extended the builder we can call it through the environment object:
  * TEST1=value1
  * INCREMENT=56
  */
-$environment->increment('INCREMENT');
+$dotenv->increment('INCREMENT');
 
 /**
  * New content: 

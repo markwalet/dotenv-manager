@@ -19,88 +19,88 @@ class DotenvManagerTest extends TestCase
     /**
      * @var DotenvManager
      */
-    private $environment;
+    private $dotenv;
 
     protected function setUp()
     {
         parent::setUp();
 
         $this->adapter = new FakeDotenvAdapter;
-        $this->environment = new DotenvManager($this->adapter);
+        $this->dotenv = new DotenvManager($this->adapter);
     }
 
     /** @test */
-    public function can_add_an_environment_line()
+    public function can_add_a_line_to_dotenv()
     {
         $this->adapter->setSource("TEST1=value");
 
-        $this->environment->add('TEST2', 'value2');
+        $this->dotenv->add('TEST2', 'value2');
         $content = $this->adapter->read();
 
         $this->assertEquals("TEST1=value".PHP_EOL."TEST2=value2", $content);
     }
 
     /** @test */
-    public function can_create_an_environment_line()
+    public function can_create_a_line_in_dotenv()
     {
         $this->adapter->setSource("TEST1=value");
 
-        $this->environment->create('TEST2', 'value2');
+        $this->dotenv->create('TEST2', 'value2');
         $content = $this->adapter->read();
 
         $this->assertEquals("TEST1=value".PHP_EOL."TEST2=value2", $content);
     }
 
     /** @test */
-    public function can_set_an_environment_line()
+    public function can_set_a_line_in_dotenv()
     {
         $this->adapter->setSource("TEST1=value");
 
-        $this->environment->set('TEST1', 'value2');
+        $this->dotenv->set('TEST1', 'value2');
         $content = $this->adapter->read();
 
         $this->assertEquals("TEST1=value2", $content);
     }
 
     /** @test */
-    public function can_update_an_environment_line()
+    public function can_update_a_line_in_dotenv()
     {
         $this->adapter->setSource("TEST1=value");
 
-        $this->environment->update('TEST1', 'value2');
+        $this->dotenv->update('TEST1', 'value2');
         $content = $this->adapter->read();
 
         $this->assertEquals("TEST1=value2", $content);
     }
 
     /** @test */
-    public function can_delete_an_environment_line()
+    public function can_delete_a_line_in_dotenv()
     {
         $this->adapter->setSource("TEST1=value".PHP_EOL."TEST2=value2");
 
-        $this->environment->delete('TEST1');
+        $this->dotenv->delete('TEST1');
         $content = $this->adapter->read();
 
         $this->assertEquals("TEST2=value2", $content);
     }
 
     /** @test */
-    public function can_unset_an_environment_line()
+    public function can_unset_a_line_in_dotenv()
     {
         $this->adapter->setSource("TEST1=value".PHP_EOL."TEST2=value2");
 
-        $this->environment->unset('TEST1');
+        $this->dotenv->unset('TEST1');
         $content = $this->adapter->read();
 
         $this->assertEquals("TEST2=value2", $content);
     }
 
     /** @test */
-    public function can_mutate_multiple_lines_in_an_environment_line_at_once()
+    public function can_mutate_multiple_lines_at_once_in_dotenv()
     {
         $this->adapter->setSource("TEST1=value1" . PHP_EOL . "TEST2=value2" . PHP_EOL . "TEST3=value3");
 
-        $this->environment->mutate(function (DotenvBuilder $builder) {
+        $this->dotenv->mutate(function (DotenvBuilder $builder) {
             $builder->add('TEST4', 'escaped value');
             $builder->update('TEST2', 'updated')->after('TEST3');
             $builder->delete('TEST1');
@@ -115,9 +115,9 @@ class DotenvManagerTest extends TestCase
     public function can_extend_builder()
     {
         $this->adapter->setSource("INTEGER_VALUE=111");
-        $this->environment->extend('increment', Increment::class);
+        $this->dotenv->extend('increment', Increment::class);
 
-        $this->environment->increment('INTEGER_VALUE');
+        $this->dotenv->increment('INTEGER_VALUE');
         $content = $this->adapter->read();
 
         $this->assertEquals("INTEGER_VALUE=112", $content);

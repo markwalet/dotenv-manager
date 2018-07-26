@@ -10,7 +10,7 @@ class FakeDotenvAdapter implements DotenvAdapter
     private $source;
 
     /**
-     * Get the contents of the environment file.
+     * Get the contents of the dotenv file.
      *
      * @return string
      */
@@ -20,7 +20,7 @@ class FakeDotenvAdapter implements DotenvAdapter
     }
 
     /**
-     * Write a string to the environment file.
+     * Write a string to the dotenv file.
      *
      * @param string $content
      *
@@ -34,7 +34,7 @@ class FakeDotenvAdapter implements DotenvAdapter
     }
 
     /**
-     * Write a string to the environment file.
+     * Write a string to the dotenv file.
      *
      * @param string $content
      */

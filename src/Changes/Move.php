@@ -44,7 +44,7 @@ class Move extends Change
         preg_match('/'.$this->getKey().'=(.*)/', $content, $matches);
 
         if (isset($matches[1]) === false) {
-            throw new InvalidArgumentException("Key {$this->getKey()} is not found in environment file.");
+            throw new InvalidArgumentException("Key {$this->getKey()} is not found in dotenv file.");
         }
 
         $value = $matches[1];

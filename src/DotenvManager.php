@@ -42,7 +42,7 @@ class DotenvManager
     }
 
     /**
-     * Update and persist the environment file.
+     * Update and persist the dotenv file.
      *
      * @param Closure $callback
      *
@@ -68,7 +68,7 @@ class DotenvManager
     }
 
     /**
-     * Persist pending changes to the environment file.
+     * Persist pending changes to the dotenv file.
      *
      * @return bool
      */

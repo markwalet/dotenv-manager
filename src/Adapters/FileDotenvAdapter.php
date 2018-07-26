@@ -22,7 +22,7 @@ class FileDotenvAdapter implements DotenvAdapter
     }
 
     /**
-     * Get the contents of the environment file.
+     * Get the contents of the dotenv file.
      *
      * @return string
      */
@@ -32,7 +32,7 @@ class FileDotenvAdapter implements DotenvAdapter
     }
 
     /**
-     * Write a string to the environment file.
+     * Write a string to the dotenv file.
      *
      * @param string $content
      *
