@@ -44,7 +44,7 @@ You can also manually set up an `DotenvManager` class when you are not using Lar
 Once you have a dotenv instance you can add a new value to the dotenv file:
 
 ```php
-$dotenv->add("FOO", "Bar");
+$dotenv->add("FOO", "Bar")->after("EXISTING_KEY");
 ```
 
 If you don't specify a location for the new value, the value will be added at the end of the file.
