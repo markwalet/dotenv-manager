@@ -1,0 +1,35 @@
+{
+    "name": "markwalet/dotenv-manager",
+    "description": "A Laravel package that helps you edit the .env file programmatically.",
+    "keywords": ["laravel", "environment", "dotenv"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark Walet",
+            "email": "mark.walet@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MarkWalet\\DotenvManager\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MarkWalet\\DotenvManager\\DotenvManagerServiceProvider"
+            ]
+        }
+    }
+}
