@@ -114,13 +114,6 @@ class Increment extends Change
         $this->key = $key;
     }
 
-    /**
-     * Apply the pending change to the given content.
-     *
-     * @param $content
-     *
-     * @return mixed
-     */
     public function apply(string $content): string
     {
         $search = '/'.$this->getKey().'=(.*)/';
