@@ -28,7 +28,6 @@ class DotenvManagerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerManager();
-        $this->registerCommands();
     }
 
     /**
@@ -43,21 +42,5 @@ class DotenvManagerServiceProvider extends ServiceProvider
                 new FileDotenvAdapter(base_path('.env'))
             );
         });
-    }
-
-    /**
-     * Register the artisan commands.
-     *
-     * @return void
-     */
-    private function registerCommands()
-    {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                AddDotenvValueCommand::class,
-                SetDotenvValueCommand::class,
-                RemoveDotenvValueCommand::class,
-            ]);
-        }
     }
 }
