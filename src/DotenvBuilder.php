@@ -61,7 +61,7 @@ class DotenvBuilder
      * @param string $content
      * @return string
      */
-    public function apply(string $content)
+    public function apply(string $content): string
     {
         /** @var Change $change */
         foreach ($this->changes as $change) {
@@ -90,7 +90,12 @@ class DotenvBuilder
         $this->methods[$method] = $class;
     }
 
-    public function methods()
+    /**
+     * Get a list of installed methods.
+     *
+     * @return array
+     */
+    public function methods(): array
     {
         return $this->methods;
     }

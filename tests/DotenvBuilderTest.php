@@ -2,10 +2,8 @@
 
 namespace MarkWalet\DotenvManager\Tests;
 
-use MarkWalet\DotenvManager\Adapters\FakeDotenvAdapter;
 use MarkWalet\DotenvManager\Changes\Change;
 use MarkWalet\DotenvManager\Changes\Concerns\HasKey;
-use MarkWalet\DotenvManager\DotenvManager;
 use MarkWalet\DotenvManager\DotenvBuilder;
 use MarkWalet\DotenvManager\Exceptions\InvalidArgumentException;
 use MarkWalet\DotenvManager\Exceptions\MethodNotFoundException;
@@ -13,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 class DotenvBuilderTest extends TestCase
 {
-
     /** @test */
     public function can_extend_builder()
     {
@@ -37,12 +34,12 @@ class DotenvBuilderTest extends TestCase
     }
 
     /** @test */
-    public function throws_an_exception_when_extending_with_a_class_that_doesnt_implement_change()
+    public function throws_an_exception_when_extending_with_a_class_that_does_not_implement_change()
     {
         $this->expectException(InvalidArgumentException::class);
         $builder = new DotenvBuilder;
 
-        $builder->extend('name', InvalidChange::class);
+        $builder->extend('name', InvalidBuilderChange::class);
     }
 
     /** @test */
@@ -53,7 +50,6 @@ class DotenvBuilderTest extends TestCase
 
         $builder->nonExistingMethod();
     }
-
 }
 
 class Decrement extends Change
@@ -69,22 +65,20 @@ class Decrement extends Change
      * Apply the pending change to the given content.
      *
      * @param $content
-     *
      * @return mixed
      */
     public function apply(string $content): string
     {
-        $search = '/' . $this->getKey() . '=(.*)/';
+        $search = '/'.$this->getKey().'=(.*)/';
         preg_match($search, $content, $matches);
         $value = $matches[1];
 
-        $replacement = $this->getKey() . '=' . ($value - 1);
+        $replacement = $this->getKey().'='.($value - 1);
 
         return preg_replace($search, $replacement, $content);
     }
 }
 
-class InvalidChange
+class InvalidBuilderChange
 {
-
 }

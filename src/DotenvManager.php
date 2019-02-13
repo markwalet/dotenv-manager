@@ -50,7 +50,7 @@ class DotenvManager
      */
     public function mutate(Closure $callback)
     {
-        $callback($this->builder);
+        $callback($this->builder());
 
         return $this->persist();
     }
@@ -64,7 +64,7 @@ class DotenvManager
      */
     public function extend(string $method, string $class)
     {
-        $this->builder->extend($method, $class);
+        $this->builder()->extend($method, $class);
     }
 
     /**
@@ -79,6 +79,16 @@ class DotenvManager
         $content = $this->builder->apply($content);
 
         return $this->adapter->write($content);
+    }
+
+    /**
+     * Get the builder instance.
+     *
+     * @return DotenvBuilder
+     */
+    public function builder()
+    {
+        return $this->builder;
     }
 
     /**
