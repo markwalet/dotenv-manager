@@ -1,12 +1,15 @@
 language: php
 
 php:
-  - 7.0
-  - 7.1
-  - 7.2
+- 7.0
+- 7.1
+- 7.2
 
 before_script:
-  - composer install --prefer-source --no-interaction
+- composer install --prefer-source --no-interaction
 
 script:
-  - vendor/bin/phpunit --coverage-text
+- vendor/bin/phpunit --coverage-text
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
