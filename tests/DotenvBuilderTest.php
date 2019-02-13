@@ -7,6 +7,7 @@ use MarkWalet\DotenvManager\Changes\Concerns\HasKey;
 use MarkWalet\DotenvManager\DotenvBuilder;
 use MarkWalet\DotenvManager\Exceptions\InvalidArgumentException;
 use MarkWalet\DotenvManager\Exceptions\MethodNotFoundException;
+use PHPUnit\Framework\Constraint\IsType;
 use PHPUnit\Framework\TestCase;
 
 class DotenvBuilderTest extends TestCase
@@ -49,6 +50,19 @@ class DotenvBuilderTest extends TestCase
         $builder = new DotenvBuilder;
 
         $builder->nonExistingMethod();
+    }
+
+    /** @test */
+    public function can_get_a_list_of_methods_from_the_builder()
+    {
+        $builder = new DotenvBuilder;
+
+        $methods = $builder->methods();
+
+        // Using a manual assert method instead of the assertIsArray() method.
+        // This is for legacy reasons. I want to keep supporting PHPUnit ^6.0.
+        $this->assertTrue(is_array($methods));
+        $this->assertNotEmpty($methods);
     }
 }
 
