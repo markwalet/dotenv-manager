@@ -1,9 +1,9 @@
 language: php
 
 php:
-- 7.0
 - 7.1
 - 7.2
+- 7.3
 
 env:
   matrix:
@@ -15,6 +15,3 @@ before_script:
 
 script:
 - vendor/bin/phpunit
-
-after_success:
-- bash <(curl -s https://codecov.io/bash)
