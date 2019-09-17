@@ -194,5 +194,4 @@ class Increment extends Change
 
 class InvalidManagerChange
 {
-
 }

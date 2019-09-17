@@ -5,7 +5,6 @@ use PHPUnit\Framework\TestCase;
 
 class FileDotenvAdapterTest extends TestCase
 {
-
     /** @test */
     public function can_read_file()
     {

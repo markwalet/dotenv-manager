@@ -78,5 +78,4 @@ class MoveTest extends TestCase
 
         $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
-
 }
