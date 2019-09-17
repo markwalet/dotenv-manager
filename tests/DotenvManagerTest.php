@@ -22,7 +22,11 @@ class DotenvManagerTest extends TestCase
      */
     private $dotenv;
 
-    protected function setUp()
+
+    /**
+     * This method is called before each test.
+     */
+    protected function setUp(): void
     {
         parent::setUp();
 
