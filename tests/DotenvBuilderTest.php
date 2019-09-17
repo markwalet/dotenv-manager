@@ -7,7 +7,6 @@ use MarkWalet\DotenvManager\Changes\Concerns\HasKey;
 use MarkWalet\DotenvManager\DotenvBuilder;
 use MarkWalet\DotenvManager\Exceptions\InvalidArgumentException;
 use MarkWalet\DotenvManager\Exceptions\MethodNotFoundException;
-use PHPUnit\Framework\Constraint\IsType;
 use PHPUnit\Framework\TestCase;
 
 class DotenvBuilderTest extends TestCase
@@ -17,12 +16,12 @@ class DotenvBuilderTest extends TestCase
     {
         $builder = new DotenvBuilder;
         $builder->extend('decrement', Decrement::class);
-        $original = "INTEGER_VALUE=144";
+        $original = 'INTEGER_VALUE=144';
         $builder->decrement('INTEGER_VALUE');
 
         $new = $builder->apply($original);
 
-        $this->assertEquals("INTEGER_VALUE=143", $new);
+        $this->assertEquals('INTEGER_VALUE=143', $new);
     }
 
     /** @test */
@@ -70,7 +69,11 @@ class Decrement extends Change
 {
     use HasKey;
 
-    function __construct(string $key)
+    /**
+     * Decrement constructor.
+     * @param string $key
+     */
+    public function __construct(string $key)
     {
         $this->key = $key;
     }

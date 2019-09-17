@@ -17,12 +17,12 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value");
+        $adapter->setSource('TEST1=value');
 
         $dotenv->add('TEST2', 'value2');
         $content = $adapter->read();
 
-        $this->assertEquals("TEST1=value".PHP_EOL."TEST2=value2", $content);
+        $this->assertEquals('TEST1=value'.PHP_EOL.'TEST2=value2', $content);
     }
 
     /** @test */
@@ -30,12 +30,12 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value");
+        $adapter->setSource('TEST1=value');
 
         $dotenv->create('TEST2', 'value2');
         $content = $adapter->read();
 
-        $this->assertEquals("TEST1=value".PHP_EOL."TEST2=value2", $content);
+        $this->assertEquals('TEST1=value'.PHP_EOL.'TEST2=value2', $content);
     }
 
     /** @test */
@@ -43,12 +43,12 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value");
+        $adapter->setSource('TEST1=value');
 
         $dotenv->set('TEST1', 'value2');
         $content = $adapter->read();
 
-        $this->assertEquals("TEST1=value2", $content);
+        $this->assertEquals('TEST1=value2', $content);
     }
 
     /** @test */
@@ -56,12 +56,12 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value");
+        $adapter->setSource('TEST1=value');
 
         $dotenv->update('TEST1', 'value2');
         $content = $adapter->read();
 
-        $this->assertEquals("TEST1=value2", $content);
+        $this->assertEquals('TEST1=value2', $content);
     }
 
     /** @test */
@@ -69,12 +69,12 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value".PHP_EOL."TEST2=value2");
+        $adapter->setSource('TEST1=value'.PHP_EOL.'TEST2=value2');
 
         $dotenv->delete('TEST1');
         $content = $adapter->read();
 
-        $this->assertEquals("TEST2=value2", $content);
+        $this->assertEquals('TEST2=value2', $content);
     }
 
     /** @test */
@@ -82,12 +82,12 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value".PHP_EOL."TEST2=value2");
+        $adapter->setSource('TEST1=value'.PHP_EOL.'TEST2=value2');
 
         $dotenv->unset('TEST1');
         $content = $adapter->read();
 
-        $this->assertEquals("TEST2=value2", $content);
+        $this->assertEquals('TEST2=value2', $content);
     }
 
     /** @test */
@@ -95,7 +95,7 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("TEST1=value1".PHP_EOL."TEST2=value2".PHP_EOL."TEST3=value3");
+        $adapter->setSource('TEST1=value1'.PHP_EOL.'TEST2=value2'.PHP_EOL.'TEST3=value3');
 
         $dotenv->mutate(function (DotenvBuilder $builder) {
             $builder->add('TEST4', 'escaped value');
@@ -105,7 +105,7 @@ class DotenvManagerTest extends TestCase
         });
         $content = $adapter->read();
 
-        $this->assertEquals("TEST4=\"escaped value\"".PHP_EOL."TEST3=value3".PHP_EOL."TEST2=updated", $content);
+        $this->assertEquals('TEST4="escaped value"'.PHP_EOL.'TEST3=value3'.PHP_EOL.'TEST2=updated', $content);
     }
 
     /** @test */
@@ -113,7 +113,7 @@ class DotenvManagerTest extends TestCase
     {
         $adapter = new FakeDotenvAdapter;
         $dotenv = new DotenvManager($adapter);
-        $adapter->setSource("INTEGER_VALUE=111");
+        $adapter->setSource('INTEGER_VALUE=111');
         $methodsBefore = $dotenv->builder()->methods();
         try {
             $dotenv->extend('increment', Increment::class);
@@ -127,7 +127,7 @@ class DotenvManagerTest extends TestCase
 
         $this->assertArrayNotHasKey('increment', $methodsBefore);
         $this->assertArrayHasKey('increment', $methodsAfter);
-        $this->assertEquals("INTEGER_VALUE=112", $content);
+        $this->assertEquals('INTEGER_VALUE=112', $content);
     }
 
     /** @test */
@@ -165,7 +165,11 @@ class Increment extends Change
 {
     use HasKey;
 
-    function __construct(string $key)
+    /**
+     * Increment constructor.
+     * @param string $key
+     */
+    public function __construct(string $key)
     {
         $this->key = $key;
     }

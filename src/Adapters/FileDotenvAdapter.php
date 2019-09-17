@@ -14,7 +14,7 @@ class FileDotenvAdapter implements DotenvAdapter
      *
      * @param string $path
      */
-    function __construct(string $path)
+    public function __construct(string $path)
     {
         $this->path = $path;
 

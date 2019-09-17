@@ -19,43 +19,43 @@ class DeleteTest extends TestCase
     public function can_apply_to_content_string()
     {
         $change = new Delete('EXISTING_KEY');
-        $original = "TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=oldValue".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=oldValue'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
     public function can_delete_key_at_start_of_string()
     {
         $change = new Delete('EXISTING_KEY');
-        $original = "EXISTING_KEY=oldValue".PHP_EOL."TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'EXISTING_KEY=oldValue'.PHP_EOL.'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
     public function can_delete_key_in_middle_of_string()
     {
         $change = new Delete('EXISTING_KEY');
-        $original = "TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=oldValue".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=oldValue'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
     public function can_delete_key_at_end_of_string()
     {
         $change = new Delete('EXISTING_KEY');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=oldValue";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=oldValue';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 }

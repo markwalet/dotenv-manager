@@ -4,7 +4,6 @@ namespace MarkWalet\DotenvManager\Changes;
 
 abstract class Change
 {
-
     /**
      * Apply the pending change to the given content.
      *
@@ -12,5 +11,5 @@ abstract class Change
      *
      * @return mixed
      */
-    public abstract function apply(string $content): string;
+    abstract public function apply(string $content): string;
 }

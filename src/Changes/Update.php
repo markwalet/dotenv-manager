@@ -25,7 +25,7 @@ class Update extends Change
      * @param string $key
      * @param mixed $value
      */
-    function __construct(string $key, $value = null)
+    public function __construct(string $key, $value = null)
     {
         $this->key = $key;
         $this->value = $value;

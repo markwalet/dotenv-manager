@@ -11,9 +11,8 @@ use MarkWalet\DotenvManager\Exceptions\InvalidArgumentException;
 use MarkWalet\DotenvManager\Exceptions\MethodNotFoundException;
 
 /**
- * Class DotenvBuilder
+ * Class DotenvBuilder.
  *
- * @package MarkWalet\DotenvManager
  * @method Addition add(string $key, $value = null)
  * @method Addition create(string $key, $value = null)
  * @method Update set(string $key, $value = null)

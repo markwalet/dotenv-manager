@@ -46,7 +46,7 @@ class AdditionTest extends TestCase
     /** @test */
     public function encapsulates_string_with_quotes_when_value_contains_spaces()
     {
-        $change = new Addition('NEW_KEY', "Value with spaces");
+        $change = new Addition('NEW_KEY', 'Value with spaces');
 
         $this->assertEquals('"Value with spaces"', $change->getValue());
     }
@@ -65,11 +65,11 @@ class AdditionTest extends TestCase
     public function can_apply_to_content_string()
     {
         $change = new Addition('NEW_KEY', 'newValue');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."NEW_KEY=newValue", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'NEW_KEY=newValue', $new);
     }
 
     /** @test */
@@ -77,11 +77,11 @@ class AdditionTest extends TestCase
     {
         $change = new Addition('NEW_KEY', 'newValue');
         $change->after('TEST_VALUE1');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."NEW_KEY=newValue".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'NEW_KEY=newValue'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
@@ -89,10 +89,10 @@ class AdditionTest extends TestCase
     {
         $change = new Addition('NEW_KEY', 'newValue');
         $change->before('TEST_VALUE2');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."NEW_KEY=newValue".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'NEW_KEY=newValue'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 }

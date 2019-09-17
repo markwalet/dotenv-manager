@@ -22,11 +22,11 @@ class MoveTest extends TestCase
     {
         $change = new Move('EXISTING_KEY');
         $change->after('TEST_VALUE2');
-        $original = "EXISTING_KEY=value".PHP_EOL."TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'EXISTING_KEY=value'.PHP_EOL.'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=value", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=value', $new);
     }
 
     /** @test */
@@ -34,11 +34,11 @@ class MoveTest extends TestCase
     {
         $change = new Move('EXISTING_KEY');
         $change->before('TEST_VALUE1');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=value";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=value';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("EXISTING_KEY=value".PHP_EOL."TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('EXISTING_KEY=value'.PHP_EOL.'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
@@ -46,11 +46,11 @@ class MoveTest extends TestCase
     {
         $change = new Move('EXISTING_KEY');
         $change->after('TEST_VALUE2');
-        $original = "TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=value".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=value'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=value", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=value', $new);
     }
 
     /** @test */
@@ -58,25 +58,25 @@ class MoveTest extends TestCase
     {
         $change = new Move('NON_EXISTING');
         $change->after('TEST_VALUE1');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $this->expectException(InvalidArgumentException::class);
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
     public function throws_invalid_position_exception_when_no_new_position_is_given()
     {
         $this->expectException(InvalidPositionException::class);
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
         $change = new Move('TEST_VALUE1');
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
 }

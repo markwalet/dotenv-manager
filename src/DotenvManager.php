@@ -3,12 +3,11 @@
 namespace MarkWalet\DotenvManager;
 
 use Closure;
-use MarkWalet\DotenvManager\Exceptions\InvalidArgumentException;
 use MarkWalet\DotenvManager\Adapters\DotenvAdapter;
+use MarkWalet\DotenvManager\Exceptions\InvalidArgumentException;
 
 /**
- * Class DotenvManager
- * @package MarkWalet\DotenvManager
+ * Class DotenvManager.
  *
  * @method bool add(string $key, $value = null)
  * @method bool create(string $key, $value = null)
@@ -35,7 +34,7 @@ class DotenvManager
      *
      * @param DotenvAdapter $adapter
      */
-    function __construct(DotenvAdapter $adapter)
+    public function __construct(DotenvAdapter $adapter)
     {
         $this->adapter = $adapter;
         $this->builder = new DotenvBuilder;

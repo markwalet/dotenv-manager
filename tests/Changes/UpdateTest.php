@@ -46,7 +46,7 @@ class UpdateTest extends TestCase
     /** @test */
     public function encapsulates_string_with_quotes_when_value_contains_spaces()
     {
-        $change = new Update('EXISTING_KEY', "Value with spaces");
+        $change = new Update('EXISTING_KEY', 'Value with spaces');
 
         $this->assertEquals('"Value with spaces"', $change->getValue());
     }
@@ -65,33 +65,33 @@ class UpdateTest extends TestCase
     public function can_update_key_at_start_of_string()
     {
         $change = new Update('EXISTING_KEY', 'newValue');
-        $original = "EXISTING_KEY=oldValue".PHP_EOL."TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'EXISTING_KEY=oldValue'.PHP_EOL.'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("EXISTING_KEY=newValue".PHP_EOL."TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('EXISTING_KEY=newValue'.PHP_EOL.'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
     public function can_update_key_at_end_of_string()
     {
         $change = new Update('EXISTING_KEY', 'newValue');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=oldValue";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=oldValue';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=newValue", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=newValue', $new);
     }
 
     /** @test */
     public function can_update_key_in_middle_of_string()
     {
         $change = new Update('EXISTING_KEY', 'newValue');
-        $original = "TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=oldValue".PHP_EOL."TEST_VALUE2=example2";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=oldValue'.PHP_EOL.'TEST_VALUE2=example2';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=newValue".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=newValue'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
@@ -99,11 +99,11 @@ class UpdateTest extends TestCase
     {
         $change = new Update('EXISTING_KEY', 'newValue');
         $change->after('TEST_VALUE1');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=oldValue";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=oldValue';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=newValue".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=newValue'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 
     /** @test */
@@ -111,10 +111,10 @@ class UpdateTest extends TestCase
     {
         $change = new Update('EXISTING_KEY', 'newValue');
         $change->before('TEST_VALUE2');
-        $original = "TEST_VALUE1=example1".PHP_EOL."TEST_VALUE2=example2".PHP_EOL."EXISTING_KEY=oldValue";
+        $original = 'TEST_VALUE1=example1'.PHP_EOL.'TEST_VALUE2=example2'.PHP_EOL.'EXISTING_KEY=oldValue';
 
         $new = $change->apply($original);
 
-        $this->assertEquals("TEST_VALUE1=example1".PHP_EOL."EXISTING_KEY=newValue".PHP_EOL."TEST_VALUE2=example2", $new);
+        $this->assertEquals('TEST_VALUE1=example1'.PHP_EOL.'EXISTING_KEY=newValue'.PHP_EOL.'TEST_VALUE2=example2', $new);
     }
 }

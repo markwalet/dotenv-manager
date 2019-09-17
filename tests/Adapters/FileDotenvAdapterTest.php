@@ -15,7 +15,7 @@ class FileDotenvAdapterTest extends TestCase
 
         $content = $adapter->read();
 
-        $this->assertEquals("Sample content", $content);
+        $this->assertEquals('Sample content', $content);
         unlink(__DIR__.'/.env.testing');
         unlink(__DIR__.'/.env.other');
     }
@@ -27,7 +27,7 @@ class FileDotenvAdapterTest extends TestCase
         file_put_contents(__DIR__.'/.env.other', 'Other content');
         $adapter = new FileDotenvAdapter(__DIR__.'/.env.testing');
 
-        $adapter->write("Updated content");
+        $adapter->write('Updated content');
         $content = $adapter->read();
 
         $this->assertEquals('Updated content', $content);
