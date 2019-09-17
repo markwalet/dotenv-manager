@@ -23,8 +23,6 @@ matrix:
 
 before_install: # Update requirements to fit environment variables.
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update --prefer-dist
-  - composer require "illuminate/database:${ILLUMINATE_VERSION}" --no-update --prefer-dist
-  - composer require "illuminate/config:${ILLUMINATE_VERSION}" --no-update --prefer-dist
   - composer require "orchestra/testbench:${TESTBENCH_VERSION}" --no-update --prefer-dist
   - composer require "phpunit/phpunit:${PHPUNIT_VERSION}" --no-update --prefer-dist
 
