@@ -1,23 +1,40 @@
 language: php
 
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/.composer/cache/files
+    - ${TRAVIS_BUILD_DIR}/travis/extension-cache
+
 php:
-- 7.1
-- 7.2
-- 7.3
+  - 7.1
+  - 7.2
+  - 7.3
 
 env:
-  matrix:
-  - PREFER_LOWEST="--prefer-lowest"
-  - PREFER_LOWEST=""
+  - ILLUMINATE_VERSION=5.5.* PHPUNIT_VERSION=~6.0 TESTBENCH_VERSION=3.5.*
+  - ILLUMINATE_VERSION=5.8.* PHPUNIT_VERSION=^7.5 TESTBENCH_VERSION=3.8.*
+  - ILLUMINATE_VERSION=6.* PHPUNIT_VERSION=^8.0 TESTBENCH_VERSION=4.*
 
-before_script:
-- composer update --prefer-source --no-interaction $PREFER_LOWEST
+matrix:
+  exclude:
+    - php: 7.1
+      env: ILLUMINATE_VERSION=6.* PHPUNIT_VERSION=^8.0 TESTBENCH_VERSION=4.*
+
+before_install: # Update requirements to fit environment variables.
+  - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update --prefer-dist
+  - composer require "illuminate/database:${ILLUMINATE_VERSION}" --no-update --prefer-dist
+  - composer require "illuminate/config:${ILLUMINATE_VERSION}" --no-update --prefer-dist
+  - composer require "orchestra/testbench:${TESTBENCH_VERSION}" --no-update --prefer-dist
+  - composer require "phpunit/phpunit:${PHPUNIT_VERSION}" --no-update --prefer-dist
+
+install: travis_retry composer install --no-interaction --prefer-dist
 
 script:
-  - vendor/bin/phpunit --coverage-clover clover.xml
+  - vendor/bin/phpunit
 
 after_success:
-  - php vendor/bin/php-coveralls -v -x clover.xml -o clover.json
+  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email: false

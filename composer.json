@@ -10,11 +10,12 @@
             "email": "mark.walet@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "php": "^7.0"
+        "php": "^7.0",
+        "illuminate/support": "~5.5|6.*"
     },
     "require-dev": {
+        "orchestra/testbench": "~3.5|4.*",
         "phpunit/phpunit": "^6.0|^7.0"
     },
     "autoload": {
