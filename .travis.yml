@@ -19,7 +19,7 @@ env:
 matrix:
   exclude:
     - php: 7.1
-    - ILLUMINATE_VERSION=6.* TESTBENCH_VERSION=4.*
+    - env: ILLUMINATE_VERSION=6.* TESTBENCH_VERSION=4.*
 
 before_install: # Update requirements to fit environment variables.
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update --prefer-dist
