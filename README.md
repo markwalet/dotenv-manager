@@ -1,6 +1,6 @@
 # PHP Dotenv manager
 
-[![Build Status](https://travis-ci.org/markwalet/dotenv-manager.svg?branch=master)](https://travis-ci.org/markwalet/dotenv-manager)
+[![Build Status](https://travis-ci.com/markwalet/dotenv-manager.svg?branch=master)](https://travis-ci.com/markwalet/dotenv-manager)
 [![codecov](https://codecov.io/gh/markwalet/dotenv-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/markwalet/dotenv-manager)
 [![StyleCI](https://github.styleci.io/repos/142404454/shield?branch=master)](https://github.styleci.io/repos/142404454)
 [![Total Downloads](https://poser.pugx.org/markwalet/dotenv-manager/downloads)](https://packagist.org/packages/markwalet/dotenv-manager)

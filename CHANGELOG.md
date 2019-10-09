@@ -3,7 +3,10 @@
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.1.0...master)
 
 ### Added
-- Added StyleCI badge to readme.
+- Added StyleCI badge to README.
+
+### Fixed
+- Fixed the link to travis CI in the README. 
 
 ## [v1.1.0](https://github.com/markwalet/dotenv-manager/compare/v1.0.0...v1.0.1)
 
