@@ -4,6 +4,7 @@
 
 ### Added
 - Added StyleCI badge to README.
+- Add support for Laravel 7. ([#4](https://github.com/markwalet/dotenv-manager/issues/4))
 
 ### Fixed
 - Fixed the link to travis CI in the README. 
