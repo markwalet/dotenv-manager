@@ -7,7 +7,7 @@
 [![Latest Stable Version](https://poser.pugx.org/markwalet/dotenv-manager/v/stable)](https://packagist.org/packages/markwalet/dotenv-manager)
 [![License](https://poser.pugx.org/markwalet/dotenv-manager/license)](https://packagist.org/packages/markwalet/dotenv-manager)
 
-A PHP package that helps you edit the .env file programmatically. Works great with software like an installation CLI.
+A PHP package that helps you edit the .env file programmatically. It works great for building tools like an installation CLI.
 
 ## Installation
 You can install this package with composer.
