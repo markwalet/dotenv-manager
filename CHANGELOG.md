@@ -1,6 +1,8 @@
 # Release Notes
 
-## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.1.0...master)
+## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.3.0...master)
+
+## [v1.3.0](https://github.com/markwalet/dotenv-manager/compare/v1.2.1...v1.3.0)
 
 ### Added
 - Added Github Actions integration.
