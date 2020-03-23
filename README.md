@@ -1,11 +1,11 @@
 # PHP Dotenv manager
 
+[![License](https://poser.pugx.org/markwalet/dotenv-manager/license)](https://packagist.org/packages/markwalet/dotenv-manager)
 [![Build Status](https://travis-ci.com/markwalet/dotenv-manager.svg?branch=master)](https://travis-ci.com/markwalet/dotenv-manager)
 [![codecov](https://codecov.io/gh/markwalet/dotenv-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/markwalet/dotenv-manager)
 [![StyleCI](https://github.styleci.io/repos/142404454/shield?branch=master)](https://github.styleci.io/repos/142404454)
 [![Total Downloads](https://poser.pugx.org/markwalet/dotenv-manager/downloads)](https://packagist.org/packages/markwalet/dotenv-manager)
 [![Latest Stable Version](https://poser.pugx.org/markwalet/dotenv-manager/v/stable)](https://packagist.org/packages/markwalet/dotenv-manager)
-[![License](https://poser.pugx.org/markwalet/dotenv-manager/license)](https://packagist.org/packages/markwalet/dotenv-manager)
 
 A PHP package that helps you edit the .env file programmatically. It works great for building tools like an installation CLI.
 
