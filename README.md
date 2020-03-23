@@ -2,7 +2,7 @@
 
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Latest Stable Version](https://poser.pugx.org/markwalet/dotenv-manager/v/stable)](https://packagist.org/packages/markwalet/dotenv-manager)
-[![Build Status](https://travis-ci.com/markwalet/dotenv-manager.svg?branch=master)](https://travis-ci.com/markwalet/dotenv-manager)
+[![Build status](https://img.shields.io/github/workflow/status/markwalet/dotenv-manager/tests?style=flat-square&label=tests)](https://github.com/markwalet/dotenv-manager/actions)
 [![Coverage](https://codecov.io/gh/markwalet/dotenv-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/markwalet/dotenv-manager)
 [![StyleCI](https://github.styleci.io/repos/142404454/shield?branch=master)](https://github.styleci.io/repos/142404454)
 [![Total Downloads](https://poser.pugx.org/markwalet/dotenv-manager/downloads)](https://packagist.org/packages/markwalet/dotenv-manager)

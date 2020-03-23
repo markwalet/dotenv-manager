@@ -8,16 +8,6 @@ use MarkWalet\DotenvManager\Adapters\FileDotenvAdapter;
 class DotenvManagerServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-
-    /**
      * Register bindings in the container.
      *
      * @return void

@@ -2,6 +2,16 @@
 
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.1.0...master)
 
+### Added
+- Added Github Actions integration.
+- Added PHP 7.4 support.
+ 
+### Removed
+- Removed support for Laravel 5.
+- Removed support for PHP 7.0
+- Removed support for PHP 7.1
+- Removed Travis integration.
+
 ## [v1.2.1](https://github.com/markwalet/dotenv-manager/compare/v1.2.0...v1.2.1)
 
 ### Fixed
