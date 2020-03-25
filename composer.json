@@ -7,7 +7,9 @@
     "authors": [
         {
             "name": "Mark Walet",
-            "email": "mark.walet@gmail.com"
+            "email": "mark.walet@gmail.com",
+            "homepage": "https://markwalet.me",
+            "role": "Owner"
         }
     ],
     "require": {
