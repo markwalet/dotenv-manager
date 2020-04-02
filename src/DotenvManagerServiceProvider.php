@@ -2,10 +2,12 @@
 
 namespace MarkWalet\DotenvManager;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use MarkWalet\DotenvManager\Adapters\FileDotenvAdapter;
 
-class DotenvManagerServiceProvider extends ServiceProvider
+class DotenvManagerServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register bindings in the container.
@@ -14,20 +16,20 @@ class DotenvManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerManager();
+        $this->app->singleton(DotenvManager::class, function (Application $app) {
+            return new DotenvManager(
+                new FileDotenvAdapter($app->basePath('.env'))
+            );
+        });
     }
 
     /**
-     * Register the manager instance.
+     * Get the services provided by the provider.
      *
-     * @return void
+     * @return array
      */
-    private function registerManager()
+    public function provides()
     {
-        $this->app->singleton(DotenvManager::class, function () {
-            return new DotenvManager(
-                new FileDotenvAdapter(base_path('.env'))
-            );
-        });
+        return [DotenvManager::class];
     }
 }
