@@ -22,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "MarkWalet\\DotenvManager\\": "src/"
+            "MarkWalet\\DotenvManager\\": "src/",
+            "MarkWalet\\DotenvManager\\Tests\\": "tests/"
         }
     },
     "config": {
