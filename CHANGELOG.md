@@ -1,8 +1,6 @@
 # Release Notes
 
-## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.3.1...master)
-
-## [v1.3.1](https://github.com/markwalet/dotenv-manager/compare/v1.3.0...v1.3.1)
+## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.3.0...master)
 
 ### Changed
 - Made the Laravel Service provider deferred. ([#2](https://github.com/markwalet/dotenv-manager/issues/2))
