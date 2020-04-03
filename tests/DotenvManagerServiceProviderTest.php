@@ -12,7 +12,7 @@ class DotenvManagerServiceProviderTest extends LaravelTestCase
         $this->app->registerConfiguredProviders();
         $bindings = $this->app->getBindings();
         $this->assertArrayHasKey(DotenvManager::class, $bindings);
-        
+
         $result = $this->app->make(DotenvManager::class);
         $this->assertInstanceOf(DotenvManager::class, $result);
     }
