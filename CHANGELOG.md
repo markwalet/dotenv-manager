@@ -7,6 +7,9 @@
 ### Changed
 - Made the Laravel Service provider deferred. ([#2](https://github.com/markwalet/dotenv-manager/issues/2))
 
+### Added
+- Added a `.gitattributes` file to shrink down releases.
+
 ## [v1.3.0](https://github.com/markwalet/dotenv-manager/compare/v1.2.1...v1.3.0)
 
 ### Added
