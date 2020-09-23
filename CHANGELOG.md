@@ -1,6 +1,8 @@
 # Release Notes
 
-## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.3.1...master)
+## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.4.0...master)
+
+## [v1.4.0](https://github.com/markwalet/dotenv-manager/compare/v1.3.1...v1.4.0)
 
 ### Added
 - Added Laravel 8 support.
