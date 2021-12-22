@@ -2,6 +2,8 @@
 
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.4.0...master)
 
+## [v1.5.0 (22-12-2021)](https://github.com/markwalet/dotenv-manager/compare/v1.4.0...v1.5.0)
+
 ## Added
 - Added PHP 8.0 support.
 
