@@ -1,5 +1,7 @@
 # PHP Dotenv manager
 
+[![PHP Dotenv manager](https://banners.beyondco.de/PHP%20Dotenv%20manager.png?theme=light&packageManager=composer+require&packageName=markwalet%2Fdotenv-manager&pattern=circuitBoard&style=style_1&description=A+PHP+package+that+helps+you+edit+the+.env+file+programmatically.&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg&widths=200)](https://github.com/markwalet/dotenv-manager)
+
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Latest Stable Version](https://poser.pugx.org/markwalet/dotenv-manager/v/stable)](https://packagist.org/packages/markwalet/dotenv-manager)
 [![Build status](https://img.shields.io/github/workflow/status/markwalet/dotenv-manager/tests?style=flat-square&label=tests)](https://github.com/markwalet/dotenv-manager/actions)
