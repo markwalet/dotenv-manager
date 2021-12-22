@@ -2,6 +2,14 @@
 
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.4.0...master)
 
+## Added
+- Added PHP 8.0 support.
+- Added PHP 8.1 support.
+
+# Removed
+- Removed PHP 7.2 support.
+- Removed PHP 7.3 support.
+
 ## [v1.4.0](https://github.com/markwalet/dotenv-manager/compare/v1.3.1...v1.4.0)
 
 ### Added
