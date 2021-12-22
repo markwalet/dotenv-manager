@@ -7,7 +7,7 @@
 ## Added
 - Added PHP 8.0 support.
 
-# Removed
+## Removed
 - Removed PHP 7.2 support.
 - Removed PHP 7.3 support.
 
