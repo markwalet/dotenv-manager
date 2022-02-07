@@ -52,7 +52,7 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.illuminate }}" --no-interaction --no-update
           composer require "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
         run: vendor/bin/phpunit --verbose
