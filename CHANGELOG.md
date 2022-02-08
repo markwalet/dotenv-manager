@@ -2,6 +2,8 @@
 
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.4.0...master)
 
+## [v1.6.0 (08-02-2022)](https://github.com/markwalet/dotenv-manager/compare/v1.5.1...v1.6.0)
+
 ### Added
 - Added Laravel 9 support.
 
