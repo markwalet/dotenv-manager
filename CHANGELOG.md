@@ -2,6 +2,14 @@
 
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.6.0...master)
 
+### Added
+- Support for PHP 8.2
+
+### Removed
+- Support for PHP 7.4
+- Support for Laravel 6
+- Support for Laravel 7
+
 ## [v1.6.0 (08-02-2022)](https://github.com/markwalet/dotenv-manager/compare/v1.5.1...v1.6.0)
 
 ### Added
