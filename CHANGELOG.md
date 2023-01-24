@@ -1,6 +1,8 @@
 # Release Notes
 
-## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.6.0...master)
+## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.7.0...master)
+
+## [v1.7.0 (24-01-2023)](https://github.com/markwalet/dotenv-manager/compare/v1.6.0...v1.7.0)
 
 ### Added
 - Support for PHP 8.2
