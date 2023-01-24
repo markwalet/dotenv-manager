@@ -5,6 +5,9 @@
 ### Added
 - Support for PHP 8.2
 
+### Fixed
+- Fixed Build Status badge in README. ([Related issue](https://github.com/badges/shields/issues/8671))
+
 ### Removed
 - Support for PHP 7.4
 - Support for Laravel 6
