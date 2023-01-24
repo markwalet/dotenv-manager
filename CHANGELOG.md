@@ -11,9 +11,9 @@
 - Fixed Build Status badge in README. ([Related issue](https://github.com/badges/shields/issues/8671))
 
 ### Removed
-- Support for PHP 7.4
-- Support for Laravel 6
-- Support for Laravel 7
+- Removed support for PHP 7.4
+- Removed support for Laravel 6
+- Removed support for Laravel 7
 
 ## [v1.6.0 (08-02-2022)](https://github.com/markwalet/dotenv-manager/compare/v1.5.1...v1.6.0)
 
