@@ -1,6 +1,8 @@
 # Release Notes
 
-## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.7.0...master)
+## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.8.0...master)
+
+## [v1.8.0 (06-07-2023)](https://github.com/markwalet/dotenv-manager/compare/v1.7.0...v1.8.0)
 
 ## Added
 - Added support for Laravel 10.
