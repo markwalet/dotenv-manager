@@ -2,18 +2,21 @@
 
 ## [Unreleased](https://github.com/markwalet/dotenv-manager/compare/v1.7.0...master)
 
+## Added
+- Added support for Laravel 10.
+
 ## [v1.7.0 (24-01-2023)](https://github.com/markwalet/dotenv-manager/compare/v1.6.0...v1.7.0)
 
 ### Added
-- Support for PHP 8.2
+- Added support for PHP 8.2.
 
 ### Fixed
 - Fixed Build Status badge in README. ([Related issue](https://github.com/badges/shields/issues/8671))
 
 ### Removed
-- Removed support for PHP 7.4
-- Removed support for Laravel 6
-- Removed support for Laravel 7
+- Removed support for PHP 7.4.
+- Removed support for Laravel 6.
+- Removed support for Laravel 7.
 
 ## [v1.6.0 (08-02-2022)](https://github.com/markwalet/dotenv-manager/compare/v1.5.1...v1.6.0)
 
